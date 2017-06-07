@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+<TextView
+    android:layout_height="match_parent"
+    android:layout_width="120dp"
+    android:id="@+id/tx_subject"
+    android:layout_alignParentLeft="true"
+    android:text="vikas"
+    android:gravity="center"
+    android:textAppearance="?android:textAppearanceLarge"/>
+    <TextView
+        android:layout_height="match_parent"
+        android:layout_width="120dp"
+        android:id="@+id/tx_total"
+        android:layout_toRightOf="@+id/tx_subject"
+        android:text="vikas"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+</RelativeLayout>
