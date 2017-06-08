@@ -31,6 +31,18 @@
         android:layout_marginLeft="10dp"
         android:paddingLeft="60dp"
         android:layout_marginStart="10dp" />
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:id="@+id/textView6"
+        android:layout_below="@+id/textView5"
+        android:layout_alignLeft="@+id/swipeToRefresh"
+        android:layout_alignStart="@+id/swipeToRefresh"
+        android:layout_marginLeft="10dp"
+        android:paddingLeft="160dp"
+        android:layout_marginStart="10dp" />
 
     <TextView
         android:text="TextView"

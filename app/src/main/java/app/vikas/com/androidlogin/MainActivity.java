@@ -28,7 +28,8 @@ import android.app.ProgressDialog;
 public class MainActivity extends AppCompatActivity {
     EditText username,password;
     String user,pass;
-    public static final String USER_NAME = "USERNAME";
+    public static final String STU_ID = "ID";
+    public static final String STU_NAME = "NAME";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         login(type,user,pass);
 
     }
-public void login(String type, String username,String password){
+public void login(String type, final String username, String password){
     class BackgroundWorker extends AsyncTask<String,Void,String> {
         Context context;
         AlertDialog alertDialog;
@@ -107,9 +108,12 @@ public void login(String type, String username,String password){
         @Override
         protected void onPostExecute(String result) {
             loadingDialog.dismiss();
-            if(result.equalsIgnoreCase("success")){
+            if(result.contains("success")){
+                String[] splited = result.split("@");//Split the Sucess Name of student so that we can display Name
+                //of student on successful login
                 Intent intent = new Intent(context, Home.class);
-                intent.putExtra(USER_NAME, user);
+                intent.putExtra(STU_NAME, splited[1].split("\\s+")[0]);//To get the first name whethere is is full name or first name
+                intent.putExtra(STU_ID,splited[2]);//Get the student id
                 //finish();
                 Toast.makeText(getApplicationContext(),"Login Successful", Toast.LENGTH_LONG).show();
                 startActivity(intent);
