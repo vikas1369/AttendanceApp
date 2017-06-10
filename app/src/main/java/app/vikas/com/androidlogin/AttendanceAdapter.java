@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,6 +54,8 @@ public class AttendanceAdapter extends ArrayAdapter{
             attendanceHolder=new AttendanceHolder();
             attendanceHolder.tx_subject=(TextView) row.findViewById(R.id.tx_subject);
             attendanceHolder.tx_total=(TextView) row.findViewById(R.id.tx_total);
+            attendanceHolder.tx_outof=(TextView)row.findViewById(R.id.tx_outof);
+            attendanceHolder.tx_percent=(TextView)row.findViewById(R.id.tx_percent);
             row.setTag(attendanceHolder);
         }
         else{
@@ -60,9 +64,11 @@ public class AttendanceAdapter extends ArrayAdapter{
         Attendance attendance=(Attendance) this.getItem(position);
         attendanceHolder.tx_subject.setText(attendance.getSubject());
         attendanceHolder.tx_total.setText(Integer.toString(attendance.getTotal()));
+        attendanceHolder.tx_outof.setText(Integer.toString(attendance.getOutof()));
+        attendanceHolder.tx_percent.setText(Double.toString(attendance.getPercent()));
         return row;
     }
     static class AttendanceHolder{
-        TextView tx_subject,tx_total;
+        TextView tx_subject,tx_total,tx_outof,tx_percent;
     }
 }

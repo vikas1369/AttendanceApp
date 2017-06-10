@@ -6,10 +6,13 @@ package app.vikas.com.androidlogin;
 
 public class Attendance {
     private String subject;
-    private int total;
-    public Attendance(String subject,int total){
+    private int total,outof;
+    private double percent;
+    public Attendance(String subject,int total,int outof,double percent){
         this.setSubject(subject);
         this.setTotal(total);
+        this.setOutof(outof);
+        this.setPercent(percent);
     }
     public String getSubject(){
         return subject;
@@ -25,5 +28,21 @@ public class Attendance {
 
     public void setSubject(String subject) {
         this.subject = subject;
+    }
+
+    public double getPercent() {
+        return percent;
+    }
+
+    public void setPercent(double percent) {
+        this.percent = percent;
+    }
+
+    public int getOutof() {
+        return outof;
+    }
+
+    public void setOutof(int outof) {
+        this.outof = outof;
     }
 }

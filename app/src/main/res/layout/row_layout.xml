@@ -7,15 +7,31 @@
     android:id="@+id/tx_subject"
     android:layout_alignParentLeft="true"
     android:text="vikas"
-    android:gravity="center"
-    android:textAppearance="?android:textAppearanceLarge"/>
+
+    android:textAppearance="?android:textAppearanceSmall"/>
     <TextView
         android:layout_height="match_parent"
-        android:layout_width="120dp"
+        android:layout_width="50dp"
         android:id="@+id/tx_total"
         android:layout_toRightOf="@+id/tx_subject"
         android:text="vikas"
-        android:gravity="center"
-        android:textAppearance="?android:textAppearanceLarge"/>
+
+        android:textAppearance="?android:textAppearanceSmall"/>
+    <TextView
+        android:layout_height="match_parent"
+        android:layout_width="50dp"
+        android:id="@+id/tx_outof"
+        android:layout_toRightOf="@+id/tx_total"
+        android:text="vikas"
+
+        android:textAppearance="?android:textAppearanceSmall"/>
+    <TextView
+        android:layout_height="match_parent"
+        android:layout_width="80dp"
+        android:id="@+id/tx_percent"
+        android:layout_toRightOf="@+id/tx_outof"
+        android:text="vikas"
+
+        android:textAppearance="?android:textAppearanceSmall"/>
 
 </RelativeLayout>

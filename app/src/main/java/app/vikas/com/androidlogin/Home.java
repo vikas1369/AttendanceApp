@@ -106,13 +106,16 @@ public class Home extends AppCompatActivity {
                     }
                     int count=0;
                     String subject;
-                    int total;
+                    int total,outof;
+                    double percent;
                     while(count<jsonArray.length()){
                             JSONObject jo=jsonArray.getJSONObject(count);
                             subject=jo.getString("Coursename");
                             total=jo.getInt("Total");
+                            outof=jo.getInt("Outof");
+                            percent=jo.getDouble("Percent");
                         System.out.println("Printing Subject with Total"+subject+total);
-                        Attendance attendance=new Attendance(subject,total);
+                        Attendance attendance=new Attendance(subject,total,outof,percent);
                         count++;
                         attendanceAdapter.add(attendance);
                     }
